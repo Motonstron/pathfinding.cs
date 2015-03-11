@@ -10,7 +10,7 @@ namespace PathFinding {
 
 		private int _height;
 
-		private bool[][] _matrix;
+		private int[][] _matrix;
 
 		private INode[][] _nodes;
 
@@ -20,7 +20,7 @@ namespace PathFinding {
 		/// <param name="width">Width.</param>
 		/// <param name="height">Height.</param>
 		/// <param name="matrix">Matrix.</param>
-		public Grid(int width, int height, bool[][] matrix = null) {
+		public Grid(int width, int height, int[][] matrix = null) {
 
 			Width = width;
 			Height = height;
@@ -55,9 +55,7 @@ namespace PathFinding {
 
 			for(i = 0; i < _height; i++) {
 				for(j = 0; j < _width; j++) {
-					if(_matrix[i][j]) {
-						nodes[i][j].IsWalkable = true;
-					}
+					nodes[i][j].IsWalkable = _matrix[i][j] == 0;
 				}
 			}
 
