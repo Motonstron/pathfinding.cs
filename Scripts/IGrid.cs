@@ -13,5 +13,7 @@ namespace PathFinding {
 		bool IsInside(int posX, int posY);
 
 		List<INode> GetNeighbours(INode node, DiagonalMovement diagonalMovement);
+
+		IGrid Clone();
 	}
 }

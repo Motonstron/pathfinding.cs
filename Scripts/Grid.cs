@@ -40,9 +40,9 @@ namespace PathFinding {
 			var j = 0;
 
 			for(i = 0; i < _height; i++) {
-				nodes[i] = new Node[_width];
+				nodes[i] = new INode[_width];
 				for(j = 0; j < _width; j++) {
-					nodes[i][j] = new Node(j, i);
+					nodes[i][j] = new INode(j, i);
 				}
 			}
 
@@ -174,7 +174,7 @@ namespace PathFinding {
 		/// <param name="posY">Position y.</param>
 		/// <param name="isWalkable">If set to <c>true</c> is walkable.</param>
 		public void SetWalkableAt(int posX, int posY, bool isWalkable) {
-			_nodes[posX][posY].IsWalkable = isWalkable;
+			_nodes[posY][posX].IsWalkable = isWalkable;
 		}
 
 		/// <summary>
