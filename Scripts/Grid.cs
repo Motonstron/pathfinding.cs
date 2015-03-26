@@ -42,7 +42,7 @@ namespace PathFinding {
 			for(i = 0; i < _height; i++) {
 				nodes[i] = new INode[_width];
 				for(j = 0; j < _width; j++) {
-					nodes[i][j] = new INode(j, i);
+					nodes[i][j] = new Node(j, i);
 				}
 			}
 
