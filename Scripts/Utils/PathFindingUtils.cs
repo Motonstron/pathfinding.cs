@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace PathFinding {
 	public static class PathFindingUtils {
@@ -34,14 +33,14 @@ namespace PathFinding {
 			var pathA = Backtrace(nodeA);
 			var pathB = Backtrace(nodeB);
 
-			return pathA.Concat(pathB.Reverse);
+			pathB.Reverse();
+			return pathA.Concat(pathB).ToList();
 		}
 
 		public static int PathLength(List<INode> path) 
 		{
 			var sum = 0;
 
-			Debug.Log(path.Count);
 			for(var i = 1; i < path.Count; ++i)
 			{
 				var a = path[i - 1];
