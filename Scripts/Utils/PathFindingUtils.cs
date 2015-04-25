@@ -29,7 +29,7 @@ namespace PathFinding {
 		 * Backtrace from start and end node, and return the path.
 		 * (including both start and end nodes)
 		 */
-		public static void BiBacktrace(Node nodeA, Node nodeB) 
+		public static List<INode> BiBacktrace(Node nodeA, Node nodeB) 
 		{
 			var pathA = Backtrace(nodeA);
 			var pathB = Backtrace(nodeB);
